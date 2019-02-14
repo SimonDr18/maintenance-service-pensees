@@ -8,6 +8,8 @@ public class App {
 
 	public static void main(String[] args) {
 
+		VueInspiration.launch(VueInspiration.class, args);
+
 		//Journal.activer();
 		Journal.activerNiveau(0);
 		
@@ -22,6 +24,8 @@ public class App {
 
 		Pensee pensee = new Pensee("Rossetti","Ce qui est plus triste qu une oeuvre inachevee, c est une oeuvre jamais commencee.");
 		penseeDAO.ajouterPensee(pensee);
+
+
 
 	}
 	
