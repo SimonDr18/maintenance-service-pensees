@@ -1,6 +1,7 @@
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import accesseur.PenseeDAO;
@@ -29,18 +30,17 @@ public class ControleurInspiration implements Initializable {
 
 	public static ControleurInspiration getInstance() {return ControleurInspiration.instance;}
 
-	@FXML protected void trouverInspiration(ActionEvent evenement) {
-
-		System.out.println("trouverInspiration( )");
-
-		// Singleton obligatoire car le framework de JavaFX cache l'instance
-		//VueInspirationVisuelle.getInstance().ecrireUnMessage("allo");
+	@FXML protected void trouverInspiration() {
+		List<Pensee> list = penseeDAO.listerPensees();
+		Random rand = new Random();
+		Pensee elementRandom = list.get(rand.nextInt(list.size()));
+		VueInspiration.getInstance().ecrirePensee(elementRandom.getMessage()+" - "+elementRandom.getAuteur());
 	}
 
-	public void initialiser()
+	public List<String> initialiser()
 	{
-		VueInspiration.getInstance().afficherListePensees(penseeDAO);
-
+		List<String> list = VueInspiration.getInstance().afficherListePensees(penseeDAO);
+		return list;
 	}
 
 	@Override
