@@ -21,8 +21,8 @@ public class App {
 		}
 
 
-		Pensee pensee = new Pensee("Rossetti","Ce qui est plus triste qu une oeuvre inachevee, c est une oeuvre jamais commencee.");
-		penseeDAO.ajouterPensee(pensee);
+		//Pensee pensee = new Pensee("Rossetti","Ce qui est plus triste qu une oeuvre inachevee, c est une oeuvre jamais commencee.");
+		//penseeDAO.ajouterPensee(pensee);
 
 		VueInspiration.launch(VueInspiration.class, args);
 

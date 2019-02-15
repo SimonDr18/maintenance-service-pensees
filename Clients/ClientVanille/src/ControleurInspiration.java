@@ -33,7 +33,7 @@ public class ControleurInspiration implements Initializable {
 	@FXML protected void trouverInspiration() {
 		List<Pensee> list = penseeDAO.listerPensees();
 		Random rand = new Random();
-		Pensee elementRandom = list.get(rand.nextInt(list.size()+1));
+		Pensee elementRandom = list.get(rand.nextInt(list.size()));
 		VueInspiration.getInstance().ecrirePensee(elementRandom.getMessage()+" - "+elementRandom.getAuteur());
 	}
 
