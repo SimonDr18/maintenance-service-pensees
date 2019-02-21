@@ -1,16 +1,10 @@
 import java.net.URL;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
 import java.util.ResourceBundle;
 
 import accesseur.cache.PenseeDAO;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import modele.Pensee;
-import outils.Journal;
 
 public class ControleurInspiration implements Initializable {
 	protected PenseeDAO penseeDAO = new PenseeDAO();

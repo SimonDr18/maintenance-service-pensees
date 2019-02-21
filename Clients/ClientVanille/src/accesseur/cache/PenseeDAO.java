@@ -1,17 +1,9 @@
 package accesseur.cache;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 import accesseur.PenseeURL;
 import modele.DecodeurPenseesXML;
@@ -79,30 +71,3 @@ public class PenseeDAO implements PenseeURL {
         return elementRandom;
     }
 }
-
-/*
- *
-
-Code de réponse 200
-ajouterPensee()
-stdClass Object
-(
-    [auteur] => Rossetti
-    [message] => Ce qui est plus triste qu’une œuvre inachevée, c’est une œuvre jamais commencée.
-    [annee] => 0
-)
-<?xml version="1.0" encoding="UTF-8"?><action>
-	<type>ajouter</type>
-	<moment>1523972018</moment>
-	<succes>1</succes>
-	<message>POST : Array
-(
-    [auteur] => Rossetti
-    [message] => Ce qui est plus triste qu’une œuvre inachevée, c’est une œuvre jamais commencée.
-    [annee] => 0
-)
-</message>
-</action>
-
- *
- */
