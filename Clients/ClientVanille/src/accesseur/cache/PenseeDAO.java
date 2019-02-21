@@ -1,21 +1,21 @@
 package accesseur.cache;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import accesseur.PenseeURL;
 import modele.DecodeurPenseesXML;
 import modele.Pensee;
 import outils.Journal;
 import outils.JournalDesactivable;
 
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class PenseeDAO implements PenseeURL {
 
     protected DecodeurPenseesXML decodeur = new DecodeurPenseesXML();
 
-    private String DSN = "jdbc::sqlite:D:\\MySQLStudio/inspiration.db";
+    private String DSN = "jdbc::sqlite:D:/MySQLStudio/inspiration";
     private String SQL_ENR = "insert into pensee(auteur,message) values (?,?) ";
     private String SQL_LIST = "Select * from pensee";
 

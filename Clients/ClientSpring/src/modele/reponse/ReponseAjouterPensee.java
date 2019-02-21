@@ -1,8 +1,8 @@
 package modele.reponse;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
 import modele.Pensee;
+
+import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="action")
 public class ReponseAjouterPensee {

@@ -1,12 +1,11 @@
 package accesseur;
 
-import java.util.List;
-
-import org.springframework.web.client.RestTemplate;
-
 import modele.Pensee;
 import modele.reponse.ReponseAjouterPensee;
 import modele.reponse.ReponseListePensees;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 // https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html
 public class PenseeDAO {

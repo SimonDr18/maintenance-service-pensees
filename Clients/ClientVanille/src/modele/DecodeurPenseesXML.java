@@ -1,21 +1,19 @@
 package modele;
 
-import java.io.IOException;
-import java.io.StringBufferInputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
 import outils.Journal;
 import outils.JournalDesactivable;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.io.StringBufferInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DecodeurPenseesXML {
 

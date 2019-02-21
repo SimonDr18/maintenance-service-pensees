@@ -1,12 +1,11 @@
 package modele.reponse;
 
-import java.util.ArrayList;
-import java.util.List;
+import modele.Pensee;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-
-import modele.Pensee;
+import java.util.ArrayList;
+import java.util.List;
 
 @XmlRootElement(name="pensees")
 public class ReponseListePensees {
