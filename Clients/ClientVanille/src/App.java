@@ -10,7 +10,7 @@ public class App {
 		//Journal.activer();
 		Journal.activerNiveau(0);
 		VueInspiration.launch(VueInspiration.class, args);
-		cachePenseeDAO.ajouterPensee(new Pensee("Simon","Hello"));
+		cachePenseeDAO.ajouterPensee(new Pensee("Simon","Hello", "Dieu"));
 	}
 	
 

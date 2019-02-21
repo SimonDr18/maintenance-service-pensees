@@ -20,13 +20,13 @@ public class ControleurInspiration implements Initializable {
 
 	@FXML protected void trouverInspiration() {
 		Pensee pensee = penseeDAO.chargerPenseeAleatoire();
-		VueInspiration.getInstance().ecrirePensee(pensee.getMessage()+" - "+pensee.getAuteur());
+		VueInspiration.getInstance().ecrirePensee(pensee.getMessage()+" - "+pensee.getAuteur()+'('+pensee.getSource()+')');
 	}
 
 	public void initialiser()
 	{
 		Pensee pensee = penseeDAO.chargerPenseeAleatoire();
-		VueInspiration.getInstance().ecrirePensee(pensee.getMessage()+" - "+pensee.getAuteur());
+		VueInspiration.getInstance().ecrirePensee(pensee.getMessage()+" - "+pensee.getAuteur()+'('+pensee.getSource()+')');
 	}
 
 	@Override

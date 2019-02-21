@@ -13,8 +13,8 @@ import java.util.Random;
 
 public class PenseeDAO implements PenseeURL {
 
-    private String DSN = "jdbc::sqlite:D:\\MySQLStudio\\inspiration.db";
-    private String SQL_ENR = "insert into pensee(auteur,message) values (?,?) ";
+    private String DSN = "jdbc:sqlite:D:\\wamp64\\www\\maintenance-service-pensees\\Clients\\ClientVanille\\src\\inspiration.db";
+    private String SQL_ENR = "insert into pensee(auteur,message,source) values (?,?,?) ";
     private String SQL_LIST = "Select * from pensee";
 
     public List<Pensee> listerPensees()
@@ -24,6 +24,7 @@ public class PenseeDAO implements PenseeURL {
         List<Pensee> listePensee = new ArrayList<>();
         Connection bd = null;
         try{
+            Class.forName("org.sqlite.JDBC");
             bd = DriverManager.getConnection(DSN);
             Statement rqList = bd.createStatement();
             ResultSet resList = rqList.executeQuery(SQL_LIST);
@@ -32,11 +33,12 @@ public class PenseeDAO implements PenseeURL {
             while (resList.next()){
                 String auteur = resList.getString("auteur");
                 String message = resList.getString("message");
-                Pensee pensee = new Pensee(auteur, message);
+                String source = resList.getString("source");
+                Pensee pensee = new Pensee(auteur, message, source);
                 listePensee.add(pensee);
             }
 
-        } catch (SQLException  i) {
+        } catch (SQLException | ClassNotFoundException i) {
             i.printStackTrace();
         }
 
@@ -53,6 +55,7 @@ public class PenseeDAO implements PenseeURL {
 
             reqEnr.setString(1,pensee.getAuteur());
             reqEnr.setString(2,pensee.getMessage());
+            reqEnr.setString(2,pensee.getSource());
 
             reqEnr.execute();
         } catch (SQLException e){
