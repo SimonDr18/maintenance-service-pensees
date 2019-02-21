@@ -13,9 +13,7 @@ import java.util.Random;
 
 public class PenseeDAO implements PenseeURL {
 
-    protected DecodeurPenseesXML decodeur = new DecodeurPenseesXML();
-
-    private String DSN = "jdbc::sqlite:D:/MySQLStudio/inspiration";
+    private String DSN = "jdbc::sqlite:D:\\MySQLStudio\\inspiration.db";
     private String SQL_ENR = "insert into pensee(auteur,message) values (?,?) ";
     private String SQL_LIST = "Select * from pensee";
 
@@ -38,8 +36,8 @@ public class PenseeDAO implements PenseeURL {
                 listePensee.add(pensee);
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException  i) {
+            i.printStackTrace();
         }
 
         return listePensee;
