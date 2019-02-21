@@ -1,4 +1,4 @@
-import accesseur.PenseeDAO;
+import accesseur.cache.PenseeDAO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-import accesseur.PenseeDAO;
+import accesseur.cache.PenseeDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +32,6 @@ public class ControleurInspiration implements Initializable {
 	public void initialiser()
 	{
 		Pensee pensee = penseeDAO.chargerPenseeAleatoire();
-
 		VueInspiration.getInstance().ecrirePensee(pensee.getMessage()+" - "+pensee.getAuteur());
 	}
 
