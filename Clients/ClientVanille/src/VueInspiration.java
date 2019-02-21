@@ -41,6 +41,7 @@ public class VueInspiration extends Application {
 		scene = new Scene(racine, 800, 600);
 		stade.setScene(scene);
 		stade.show();
+		ControleurInspiration.getInstance().initialiser();
 	}
 
 	public void ecrirePensee(String e)

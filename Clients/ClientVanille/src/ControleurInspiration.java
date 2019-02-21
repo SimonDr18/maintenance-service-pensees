@@ -17,30 +17,23 @@ public class ControleurInspiration implements Initializable {
 
 	public ControleurInspiration()
 	{
-		List<Pensee> listePensees = penseeDAO.listerPensees();
-
-		for(Iterator<Pensee> visiteur = listePensees.iterator(); visiteur.hasNext(); )
-		{
-			Pensee pensee = visiteur.next();
-			Journal.ecrire(5, pensee.getMessage() + "(" + pensee.getAuteur() + ")");
-		}
 		ControleurInspiration.instance = this;
 	}
+
 	protected static ControleurInspiration instance = null;
 
 	public static ControleurInspiration getInstance() {return ControleurInspiration.instance;}
 
 	@FXML protected void trouverInspiration() {
-		List<Pensee> list = penseeDAO.listerPensees();
-		Random rand = new Random();
-		Pensee elementRandom = list.get(rand.nextInt(list.size()));
-		VueInspiration.getInstance().ecrirePensee(elementRandom.getMessage()+" - "+elementRandom.getAuteur());
+		Pensee pensee = penseeDAO.chargerPenseeAleatoire();
+		VueInspiration.getInstance().ecrirePensee(pensee.getMessage()+" - "+pensee.getAuteur());
 	}
 
-	public List<String> initialiser()
+	public void initialiser()
 	{
-		List<String> list = VueInspiration.getInstance().afficherListePensees(penseeDAO);
-		return list;
+		Pensee pensee = penseeDAO.chargerPenseeAleatoire();
+
+		VueInspiration.getInstance().ecrirePensee(pensee.getMessage()+" - "+pensee.getAuteur());
 	}
 
 	@Override
